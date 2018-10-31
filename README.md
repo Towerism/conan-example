@@ -12,25 +12,27 @@ $ conan profile new default --detect
 $ conan profile update settings.compiler.libcxx=libstdc++11 default
 ```
 
-Create the build tree, and install dependencies:
+NOTE: If you are using an old compiler, the second command is unnecessary and
+probably even counter-productive
+
+Run make from the project root:
 
 ```bash
-$ mkdir build && cd build
-$ conan install ..
+$ make
 ```
-
-Build with cmake:
-
-```bash
-$ cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
-$ cmake --build .
-```
-
 
 ## Run
 
-From within the build tree:
+The resulting `md5` executable will be found in the `build/bin` directory:
 
 ```bash
-$ ./bin/md5
+$ ./build/bin/md5
+```
+
+## Test
+
+Run the tests:
+
+```bash
+$ make test
 ```
