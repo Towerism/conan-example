@@ -1,7 +1,7 @@
 MAKE := make -s
 BUILD_DIR := build
 GENERATOR := Unix Makefiles
-CXX ?= $(which g++)
+CXX ?= $(which clang++)
 CMAKE_FLAGS := "-DCMAKE_CXX_COMPILER='$(CXX)'"
 
 .PHONY:: all test run-tests compile build-dir \
@@ -20,7 +20,7 @@ test run-tests::
 
 compile::
 compile generate prepare-deps::
-	@conan install -if ./build --build=missing .
+	@conan install -if ./build --build=missing --profile clang .
 compile generate build-dir::
 	@mkdir -p $(BUILD_DIR)
 compile generate::
