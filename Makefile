@@ -28,6 +28,11 @@ compile generate::
 compile::
 	@$(MAKE) -C $(BUILD_DIR)
 
+tidy::
+	@find . -regex '.*\.\(cpp\|hpp\|cc\|cxx\)' -exec clang-tidy {} \;
+
+format::
+	@find . -regex '.*\.\(cpp\|hpp\|hh\|h\|cc\|cxx\)' -exec clang-format -style=file -i {} \;
 
 clean::
 	@$(MAKE) -C $(BUILD_DIR) clean ||:
