@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "generate_md5.hh"
+#include <GenerateMD5/generate_md5.hh>
 
 TEST(GenerateMd5, ReturnsAConstantString)
 {
