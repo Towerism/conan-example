@@ -3,6 +3,7 @@ BUILD_DIR := build
 GENERATOR := Unix Makefiles
 CXX ?= $(which clang++)
 CMAKE_FLAGS := "-DCMAKE_CXX_COMPILER='$(CXX)'"
+CMAKE_FLAGS := "-DCMAKE_BUILD_TYPE=Debug"
 
 .PHONY:: all test run-tests compile build-dir \
 	 prepare-deps generate clean \
