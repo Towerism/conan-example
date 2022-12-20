@@ -1,4 +1,4 @@
-#include "generate_md5.hh"
+#include <GenerateMD5/generate_md5.hh>
 #include <iostream>
 
 auto main(int /*argc*/, char** /*argv*/) -> int
