@@ -13,6 +13,8 @@ CMAKE_FLAGS := "-DCMAKE_BUILD_TYPE=Debug"
 all::
 all:: compile
 
+check:: tidy format
+
 
 test::
 test run-tests::
